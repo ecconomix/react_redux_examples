@@ -17,9 +17,9 @@ class Counter extends Component {
     )
   }
 }
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
-    count: state.counterReducer.counterApp,
+    count: state.counterApp.counterValue,
   };
 }
 export default connect(mapStateToProps)(Counter);

@@ -9,7 +9,8 @@ module.exports = {
   },
   mode: 'development',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    open: false
   },
   module: {
     rules: [

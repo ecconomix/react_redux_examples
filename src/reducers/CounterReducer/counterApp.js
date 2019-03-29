@@ -3,28 +3,28 @@ import * as actionType from '../../actions/ActionType';
 import { createReducer } from 'redux-create-reducer';
 
 const initialState = {
-  counterApp: 0
+  counterValue: 0
 };
 
-const counterReducer = createReducer(initialState, {
+const counterApp = createReducer(initialState, {
   [actionType.ADD_COUNTER]: (state, action) => {
     return {
-       ...state, 
-       counterApp: state.counterApp + action.payload
+      ...state,
+      counterValue: state.counterValue + action.payload
     }
   },
   [actionType.REMOVE_COUNTER]: (state, action) => {
     return {
       ...state,
-      counterApp: state.counterApp - action.payload
+      counterValue: state.counterValue - action.payload 
     }
   },
   [actionType.RESET_COUNTER]: (state, action) => {
     return {
       ...state,
-      counterApp: action.payload
+      counterValue: action.payload
     }
   }
 });
 
-export default counterReducer;
+export default counterApp;
