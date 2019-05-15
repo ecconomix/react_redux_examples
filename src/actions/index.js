@@ -1,16 +1,16 @@
-import * as actionType from './ActionType';
+import { counterActionTypes } from 'actionTypes';
 
 export const addCounter = () => ({
-  type: actionType.ADD_COUNTER,
+  type: counterActionTypes.ADD_COUNTER,
   payload: 1
 });
 
 export const removeCounter = () => ({
-  type: actionType.REMOVE_COUNTER,
+  type: counterActionTypes.REMOVE_COUNTER,
   payload: 1
 });
 
 export const resetCounter = () => ({
-  type: actionType.RESET_COUNTER,
+  type: counterActionTypes.RESET_COUNTER,
   payload: 0
 })

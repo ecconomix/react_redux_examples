@@ -1,5 +1,5 @@
 
-import * as actionType from '../../actions/ActionType';
+import { counterActionTypes } from 'actionTypes';
 import { createReducer } from 'redux-create-reducer';
 
 const initialState = {
@@ -7,19 +7,19 @@ const initialState = {
 };
 
 const counterApp = createReducer(initialState, {
-  [actionType.ADD_COUNTER]: (state, action) => {
+  [counterActionTypes.ADD_COUNTER]: (state, action) => {
     return {
       ...state,
       counterValue: state.counterValue + action.payload
     }
   },
-  [actionType.REMOVE_COUNTER]: (state, action) => {
+  [counterActionTypes.REMOVE_COUNTER]: (state, action) => {
     return {
       ...state,
       counterValue: state.counterValue - action.payload 
     }
   },
-  [actionType.RESET_COUNTER]: (state, action) => {
+  [counterActionTypes.RESET_COUNTER]: (state, action) => {
     return {
       ...state,
       counterValue: action.payload
