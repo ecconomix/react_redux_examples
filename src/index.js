@@ -4,7 +4,7 @@ import {  applyMiddleware, createStore } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 import App from './App.jsx';
-import Navigation from 'components/Navigation/Navigation';
+import Header from 'components/Header';
 import Counter from 'containers/CounterContainers/Counter';
 import reducer from './reducers';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -17,8 +17,8 @@ const store = createStore(
 render(
   <BrowserRouter>
     <Provider store={store}>
+      <Header />
       <BrowserRouter>
-       <Navigation />
         <Route exact path="/" component={App} />
         <Route path="/counter" component={Counter} />
       </BrowserRouter>
