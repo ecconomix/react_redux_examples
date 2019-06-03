@@ -8,6 +8,7 @@ import Navigation from 'components/Navigation/Navigation';
 import Counter from 'containers/CounterContainers/Counter';
 import reducer from './reducers';
 import { BrowserRouter, Route } from 'react-router-dom';
+import './styles/main.css';
 
 const store = createStore(
   reducer,
