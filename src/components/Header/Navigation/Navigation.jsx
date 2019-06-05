@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navigation = () => (
-  <nav>
-    <Link to="/">Home</Link>
-    <Link to="/counter">Counter</Link>
+const Navigation = ({ theme, test}) => (
+  <nav className={theme.navContainer}>
+    <Link to="/" className={theme.navLink}>Home</Link>
+    <Link to="/counter" className={theme.navLink}>Counter</Link>
   </nav>
 );
 

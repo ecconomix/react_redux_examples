@@ -5,7 +5,7 @@ import theme from './theme.scss';
 
 const Header = () => (
   <header className={theme.headerContanier}>
-    <Navigation />
+    <Navigation theme={theme} />
   </header>
 );
 

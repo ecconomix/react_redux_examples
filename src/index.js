@@ -8,7 +8,7 @@ import Header from 'components/Header';
 import Counter from 'containers/CounterContainers/Counter';
 import reducer from './reducers';
 import { BrowserRouter, Route } from 'react-router-dom';
-import './styles/main.css';
+import './styles/main.scss';
 
 const store = createStore(
   reducer,
@@ -17,8 +17,9 @@ const store = createStore(
 render(
   <BrowserRouter>
     <Provider store={store}>
-      <Header />
+
       <BrowserRouter>
+        <Header />
         <Route exact path="/" component={App} />
         <Route path="/counter" component={Counter} />
       </BrowserRouter>

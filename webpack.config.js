@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -10,7 +11,8 @@ module.exports = {
   mode: 'development',
   devServer: {
     contentBase: './dist',
-    open: false
+    open: false,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -28,7 +30,9 @@ module.exports = {
           { 
             loader: 'css-loader', 
             options: {
-              modules: true
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[local]_[hash:base64:5]'
             }
           },
           'sass-loader'
@@ -44,8 +48,11 @@ module.exports = {
       actionTypes: path.resolve(__dirname, 'src/constants/actionTypes'),
     }
   },
-  plugins: [new HtmlWebpackPlugin({
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
     filename: 'index.html',
     template: './public/index.html',
-  })]
+  }),
+]
 };
